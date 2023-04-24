@@ -9,5 +9,5 @@ func ErrorResponse(c *fiber.Ctx, status int, errorMsg string) error {
 }
 
 func JsonResponse(c *fiber.Ctx, status int, response interface{}) error {
-	return c.Status(status).JSON(response)
+	return c.Status(status).JSON(fiber.Map{"data": response})
 }
